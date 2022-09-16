@@ -1,0 +1,25 @@
+<div class="table">
+    <div class="item">
+        <img [src]="pokemon.sprites.front_default" alt="pokemon">
+        <h1>{{pokemon.name}}</h1>
+        <br>
+        <div>
+            <div>
+                <h3>Types: </h3>
+                <h3 *ngFor="let type of pokemon.types">{{type.type.name}}</h3>
+            </div>
+            <br>
+            <h3>Height: {{pokemon.height * 10}} cm</h3>
+            <br>
+            <div>
+                <h3>Abilities: </h3>
+                <h3 *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</h3>
+            </div>
+            <br>
+            <div>
+                <h3>Versions: </h3>
+                <h3 *ngFor="let game of pokemon.game_indices">{{game.version.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

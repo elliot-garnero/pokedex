@@ -1,0 +1,14 @@
+<header>
+    <h1>Pokedex</h1>
+    <nav>
+        <a routerLink="/pokemonListComponent/all" routerLinkActive="active" ariaCurrentWhenActive="page">Pokemon List</a>
+        <div>
+            <input type="search" id="site-search" (change)="searchPokemon($event)" placeholder="Name">
+            <div *ngIf="error">No pokemon with that name</div>
+        </div>
+        <div>
+            <input type="search" id="type-search" (change)="searchType($event)" placeholder="Type">
+            <div *ngIf="errorType">No pokemon with that type</div>
+        </div>
+    </nav>
+</header>

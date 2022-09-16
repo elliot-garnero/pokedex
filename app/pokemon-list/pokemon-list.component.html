@@ -1,0 +1,15 @@
+<div class="table">
+    <div class="item"
+    *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalPokemons}">
+        <a [routerLink]="['/pokemonDetailComponent', pokemon.name]">
+            <img [src]="pokemon.sprites.front_default" alt="pokemon">
+            <h2>{{pokemon.name}}</h2>
+            <div>
+                <h3>Types: </h3>
+                <h3 *ngFor="let type of pokemon.types">{{type.type.name}}</h3>
+            </div>
+        </a>
+    </div>
+</div>
+
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons(pokemonType)"></pagination-controls>
